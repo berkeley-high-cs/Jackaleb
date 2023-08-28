@@ -30,7 +30,7 @@ public class Xor {
   public decode(String text){
 
     for(int i = 0; i < text.length - 2; i++){
-     byteholder.add(text.substring(i, i + 2));
+     byteHolder.add(text.substring(i, i + 2));
     }
 
   }
