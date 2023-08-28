@@ -27,7 +27,7 @@ public class Xor {
   //   new String(bytes, StandardCharsets.UTF_8);
   //
 
-  public decode(String text){
+  public void decode(String text){
 
     for(int i = 0; i < text.length - 2; i++){
      byteHolder.add(text.substring(i, i + 2));
