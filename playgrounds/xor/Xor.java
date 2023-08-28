@@ -20,7 +20,7 @@ public class Xor {
   // You don't need to change main but you do need to implement the decode
   // method. And you'll probably want to implement some helper methods along the
   // way. To make a String from an array of bytes (byte[]) you can use the
-  // String constructor String(byte[] bytes, String enc) like:
+  // String constructor String(byte[] bytes, String enc) like:ghjgh
   //
   //   new String(bytes, StandardCharsets.UTF_8);
   //
