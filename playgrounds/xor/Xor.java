@@ -2,6 +2,8 @@ import java.nio.charset.StandardCharsets;
 
 public class Xor {
 
+  private byteHolder = new ArrayList();
+
   // This is the cipher text, encoded as a hex string. If you translate every
   // two characters of this string into a byte you will have an array of bytes
   // which can be decoded by xor'ing the bytes with bits from the key, taking
@@ -24,6 +26,14 @@ public class Xor {
   //
   //   new String(bytes, StandardCharsets.UTF_8);
   //
+
+  public decode(String text){
+
+    for(int i = 0; i < text.length - 2; i++){
+     byteholder.add(text.substring(i, i + 2));
+    }
+
+  }
   public static void main(String[] argv) throws Exception {
     System.out.println(new Xor().decode(CIPHERTEXT, KEY));
   }
