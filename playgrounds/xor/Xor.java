@@ -29,7 +29,7 @@ public class Xor {
 
   public void decode(String text , int initKey){
 
-    for(int i = 0; i < text.length - 2; i++){
+    for(int i = 0; i < text.length() - 2; i++){
      byteHolder.add(Integer.parseInt(text.substring(i, i + 2),16));
     }
 
