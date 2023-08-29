@@ -2,7 +2,7 @@ import java.nio.charset.StandardCharsets;
 
 public class Xor {
 
-  public ArrayList<Byte> byteHolder = new ArrayList();
+  public ArrayList<Byte> byteHolder = new ArrayList<>();
 
   // This is the cipher text, encoded as a hex string. If you translate every
   // two characters of this string into a byte you will have an array of bytes
