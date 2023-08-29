@@ -2,7 +2,7 @@ import java.nio.charset.StandardCharsets;
 
 public class Xor {
 
-  private byteHolder = new ArrayList();
+  private ArrayList<Byte> byteHolder = new ArrayList();
 
   // This is the cipher text, encoded as a hex string. If you translate every
   // two characters of this string into a byte you will have an array of bytes
@@ -30,7 +30,7 @@ public class Xor {
   public void decode(String text){
 
     for(int i = 0; i < text.length - 2; i++){
-     byteHolder.add(text.substring(i, i + 2));
+     byteHolder.add(Integer.parseInt(text.substring(i, i + 2),16));
     }
 
   }
