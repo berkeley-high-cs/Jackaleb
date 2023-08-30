@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class Xor {
 
-  public ArrayList<Byte> byteHolder = new ArrayList<>();
 
   // This is the cipher text, encoded as a hex string. If you translate every
   // two characters of this string into a byte you will have an array of bytes
@@ -19,6 +18,8 @@ public class Xor {
   // msg.getBytes(StandardCharsets.UTF_8) as described above. (Encryption and
   // decryption are the same process with this cipher.)
   private static final int KEY = 567231495;
+  public ArrayList<Byte> byteHolder = new ArrayList<>();
+  public byte[] byteArray = new byte[CIPHERTEXT.length()/2];
 
   // You don't need to change main but you do need to implement the decode
   // method. And you'll probably want to implement some helper methods along the
@@ -28,13 +29,14 @@ public class Xor {
   //   new String(bytes, StandardCharsets.UTF_8);
   //
 
-  public int decode(String text , int initKey){
+  public String decode(String text , int initKey){
 
     for(int i = 0; i < text.length() - 2; i++){
      byteHolder.add((byte)Integer.parseInt(text.substring(i, i + 2),16));
     }
-    // (byte)(byteHolder[0] ^ initKey);
- return (CIPHERTEXT.length() / 2);
+    (byte)(byteArray[0] ^ initKey);
+ //return (CIPHERTEXT.length() / 2);
+ return new String(bytes, StandardCharsets.UTF_8);
   }
   public static void main(String[] argv) throws Exception {
     System.out.println(new Xor().decode(CIPHERTEXT, KEY));
