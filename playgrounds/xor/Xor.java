@@ -35,7 +35,7 @@ public class Xor {
      byteArray[i] = ((byte)Integer.parseInt(text.substring(i, i + 2),16));
     }
 
-  fuckingJava = (byte)(byteArray[0] ^ initKey);
+  String fuckingJava = (byte)(byteArray[0] ^ initKey);
  
  //return (CIPHERTEXT.length() / 2);
   return new String(byteArray, StandardCharsets.UTF_8);
