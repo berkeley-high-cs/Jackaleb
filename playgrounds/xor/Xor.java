@@ -32,7 +32,7 @@ public class Xor {
   public String decode(String text , int initKey){
     int n = 0;
     for(int i = 0; i < text.length()/2; i+=2){
-     byteArray[i] = ((byte)Integer.parseInt(text.substring(i, i + 2),16));
+     byteArray[n] = ((byte)Integer.parseInt(text.substring(i, i + 2),16));
     n++;
     }
 
