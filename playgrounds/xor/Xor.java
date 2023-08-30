@@ -34,7 +34,7 @@ public class Xor {
     for(int i = 0; i < text.length() - 2; i++){
      byteHolder.add((byte)Integer.parseInt(text.substring(i, i + 2),16));
     }
-    (byte)(byteArray[0] ^ initKey);
+    int i = (byte)(byteArray[0] ^ initKey);
  //return (CIPHERTEXT.length() / 2);
  return new String(bytes, StandardCharsets.UTF_8);
   }
