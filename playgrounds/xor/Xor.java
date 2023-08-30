@@ -30,12 +30,14 @@ public class Xor {
   //
 
   public String decode(String text , int initKey){
-
+    int n = 0;
     for(int i = 0; i < text.length()/2; i+=2){
      byteArray[i] = ((byte)Integer.parseInt(text.substring(i, i + 2),16));
+    n++;
     }
 
-  byte fuckingJava = (byte)(byteArray[0] ^ initKey);
+  byte Java = (byte)(byteArray[0] ^ initKey);
+
  
  //return (CIPHERTEXT.length() / 2);
   return new String(byteArray, StandardCharsets.UTF_8);
