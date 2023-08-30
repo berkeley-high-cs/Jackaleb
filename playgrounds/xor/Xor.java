@@ -31,7 +31,7 @@ public class Xor {
   public String decode(String text , int initKey){
 
     for(int i = 0; i < text.length() - 2; i++){
-     byteHolder.add(Integer.parseInt(text.substring(i, i + 2),16));
+     byteHolder.add((Integer.parseInt(text.substring(i, i + 2),16)));
     }
 
   }
