@@ -36,7 +36,7 @@ public class Xor {
     n++;
     }
 
-  byte baklava = (byte)(byteArray[0] ^ initKey << 24);
+  byte baklava = (byte)(byteArray[0] ^ initKey);
   byte baklava2 = (byte)(byteArray[1] ^ initKey << 16);
 byte[] test = new byte[2];
  test[0] = baklava;
