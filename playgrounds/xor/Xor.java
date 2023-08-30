@@ -36,11 +36,11 @@ public class Xor {
     n++;
     }
 
-  byte baclava = (byte)(byteArray[0] ^ initKey);
-  byte baclava2 = (byte)(byteArray[1] ^ initKey);
+  byte baklava = (byte)(byteArray[0] ^ initKey);
+  byte baklava2 = (byte)(byteArray[1] ^ initKey << 24);
 byte[] test = new byte[2];
- test[0] = baclava;
- test[1] = baclava2;
+ test[0] = baklava;
+ test[1] = baklava2;
  //return (CIPHERTEXT.length() / 2);
   return new String(test, StandardCharsets.UTF_8);
   }
