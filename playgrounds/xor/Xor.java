@@ -31,12 +31,12 @@ public class Xor {
 
   public String decode(String text , int initKey){
 
-    for(int i = 0; i < text.length() - 2; i++){
-     byteHolder.add((byte)Integer.parseInt(text.substring(i, i + 2),16));
+    for(int i = 0; i < text.length()/2; i+=2){
+     byteArray[i] = ((byte)Integer.parseInt(text.substring(i, i + 2),16));
     }
-    int i = (byte)(byteArray[0] ^ initKey);
+    (byte)(byteArray[0] ^ initKey);
  //return (CIPHERTEXT.length() / 2);
- return new String(bytes, StandardCharsets.UTF_8);
+  return new String(byteArray, StandardCharsets.UTF_8);
   }
   public static void main(String[] argv) throws Exception {
     System.out.println(new Xor().decode(CIPHERTEXT, KEY));
