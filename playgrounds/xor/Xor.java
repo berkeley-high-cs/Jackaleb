@@ -33,8 +33,8 @@ public class Xor {
     for(int i = 0; i < text.length() - 2; i++){
      byteHolder.add((byte)Integer.parseInt(text.substring(i, i + 2),16));
     }
-    return (byte)(byteHolder[0] ^ initKey);
-
+    // (byte)(byteHolder[0] ^ initKey);
+ return (CIPHERTEXT.length() / 2).toString();
   }
   public static void main(String[] argv) throws Exception {
     System.out.println(new Xor().decode(CIPHERTEXT, KEY));
