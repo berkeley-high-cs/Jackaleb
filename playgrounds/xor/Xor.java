@@ -36,11 +36,11 @@ public class Xor {
     n++;
     }
 
-  byte Java = (byte)(byteArray[0] ^ initKey);
-
- 
+  byte baclava = (byte)(byteArray[0] ^ initKey);
+byte[] test = new byte[1];
+ test[0] = baclava;
  //return (CIPHERTEXT.length() / 2);
-  return new String(byteArray, StandardCharsets.UTF_8);
+  return new String(test, StandardCharsets.UTF_8);
   }
   public static void main(String[] argv) throws Exception {
     System.out.println(new Xor().decode(CIPHERTEXT, KEY));
