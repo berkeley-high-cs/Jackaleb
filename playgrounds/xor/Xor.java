@@ -37,8 +37,10 @@ public class Xor {
     }
 
   byte baclava = (byte)(byteArray[0] ^ initKey);
-byte[] test = new byte[1];
+  byte baclava2 = (byte)(byteArray[1] ^ initKey);
+byte[] test = new byte[2];
  test[0] = baclava;
+ test[1] = baclava2;
  //return (CIPHERTEXT.length() / 2);
   return new String(test, StandardCharsets.UTF_8);
   }
