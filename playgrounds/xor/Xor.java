@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class Xor {
 
-
   // This is the cipher text, encoded as a hex string. If you translate every
   // two characters of this string into a byte you will have an array of bytes
   // which can be decoded by xor'ing the bytes with bits from the key, taking
@@ -19,7 +18,7 @@ public class Xor {
   // decryption are the same process with this cipher.)
   private static final int KEY = 567231495;
   public ArrayList<Byte> byteHolder = new ArrayList<>();
-  public byte[] byteArray = new byte[CIPHERTEXT.length()/2];
+  public byte[] byteArray = new byte[CIPHERTEXT.length() / 2];
 
   // You don't need to change main but you do need to implement the decode
   // method. And you'll probably want to implement some helper methods along the
@@ -29,29 +28,24 @@ public class Xor {
   //   new String(bytes, StandardCharsets.UTF_8);
   //
 
-  public String decode(String text , int initKey){
+  public String decode(String text, int initKey) {
     int n = 0;
-    for(int i = 0; i < text.length(); i+=2){
-     byteArray[n] = ((byte)Integer.parseInt(text.substring(i, i + 2),16));
-    n++;
+    for (int i = 0; i < text.length(); i += 2) {
+      byteArray[n] = ((byte) Integer.parseInt(text.substring(i, i + 2), 16));
+      n++;
     }
-byte[] test = new byte[21];
+    byte[] test = new byte[21];
 
-for(int i = 0; i < 21/4; i++){
-  byte baklava = (byte)(byteArray[i] ^ initKey);
-  byte baklava2 = (byte)(byteArray[i + 1] ^ initKey >> 8);
-  byte baklava3 = (byte)(byteArray[i + 2] ^ initKey >> 16);
-  byte baklava4 = (byte)(byteArray[i + 3] ^ initKey >> 24);
-
- test[i] = baklava;
- test[i + 1] = baklava2;
-  test[i + 2] = baklava3;
-   test[i + 3] = baklava4;
-   
-}
- //return (CIPHERTEXT.length() / 2);
-  return new String(test, StandardCharsets.UTF_8);
+    for (int i = 0; i < 21 / 4; i++) {
+      test[i] = (byte) (byteArray[i] ^ initKey);
+      test[i + 1] = (byte) (byteArray[i + 1] ^ initKey >> 8);
+      test[i + 2] = (byte) (byteArray[i + 2] ^ initKey >> 16);
+      test[i + 3] = (byte) (byteArray[i + 3] ^ initKey >> 24);
+    }
+    //return (CIPHERTEXT.length() / 2);
+    return new String(test, StandardCharsets.UTF_8);
   }
+
   public static void main(String[] argv) throws Exception {
     System.out.println(new Xor().decode(CIPHERTEXT, KEY));
   }
