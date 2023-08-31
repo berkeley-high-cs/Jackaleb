@@ -36,7 +36,7 @@ public class Xor {
     }
     byte[] test = new byte[21];
 
-    for (int i = 0; i < 21 / 4; i++) {
+    for (int i = 0; i < 21; i++) {
       test[i] = (byte) (byteArray[i] ^ initKey);
       test[i + 1] = (byte) (byteArray[i + 1] ^ initKey >> 8);
       test[i + 2] = (byte) (byteArray[i + 2] ^ initKey >> 16);
