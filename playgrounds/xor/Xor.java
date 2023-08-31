@@ -37,7 +37,7 @@ public class Xor {
     }
 byte[] test = new byte[21];
 
-for(int i = 0; i < text.length()/4; i++){
+for(int i = 0; i < text.length()/8; i++){
   byte baklava = (byte)(byteArray[i] ^ initKey);
   byte baklava2 = (byte)(byteArray[i + 1] ^ initKey >> 8);
   byte baklava3 = (byte)(byteArray[i + 2] ^ initKey >> 16);
