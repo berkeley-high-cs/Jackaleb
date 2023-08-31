@@ -35,12 +35,19 @@ public class Xor {
      byteArray[n] = ((byte)Integer.parseInt(text.substring(i, i + 2),16));
     n++;
     }
+byte[] test = new byte[21];
 
-  byte baklava = (byte)(byteArray[0] ^ initKey);
-  byte baklava2 = (byte)(byteArray[1] ^ initKey >> 8);
-byte[] test = new byte[2];
- test[0] = baklava;
- test[1] = baklava2;
+for(int i = 0; i < text.length()/4; i++){
+  byte baklava = (byte)(byteArray[i] ^ initKey);
+  byte baklava2 = (byte)(byteArray[i + 1] ^ initKey >> 8);
+  byte baklava3 = (byte)(byteArray[i + 2] ^ initKey >> 16);
+  byte baklava4 = (byte)(byteArray[i + 3] ^ initKey >> 24);
+
+ test[i] = baklava;
+ test[i + 1] = baklava2;
+  test[i + 2] = baklava3;
+   test[i + 3] = baklava4;
+}
  //return (CIPHERTEXT.length() / 2);
   return new String(test, StandardCharsets.UTF_8);
   }
