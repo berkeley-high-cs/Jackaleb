@@ -35,6 +35,7 @@ public class Main {
         if (answer.equals("y")){
           System.out.println("Komodo Dragon ig");
         }
+        
           else
           System.out.println("snake idk");
         } 
