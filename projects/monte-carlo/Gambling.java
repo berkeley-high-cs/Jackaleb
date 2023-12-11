@@ -14,6 +14,7 @@ public class Gambling {
         }
         Collections.sort(csgoCases);
         return csgoCases;
+        
 //population = initPopulation;
     }
 
