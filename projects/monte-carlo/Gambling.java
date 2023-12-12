@@ -1,4 +1,6 @@
 import java.util.*;
+import java. lang. Math;
+import java.util.ArrayList;
 import static java.util.Collections.sort;
 
 public class Gambling {
@@ -72,5 +74,17 @@ class Log {
         double[] logValues = {logOfMin, logOfMax};
         return logValues;
     }
+    }  
+
+
+    class NormalRandomVariable implements RandomVariable{
+        private Random r = new Random();
+        ArrayList<Double> normalValues(int population){
+    
+        }
+        public RandomVariable(){
+            this.random = random;
+        }
     }
+
 }
