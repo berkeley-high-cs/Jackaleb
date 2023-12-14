@@ -1,10 +1,11 @@
 import java.util.*;
 import java. lang. Math;
-import java.util.ArrayList;
+
 import static java.util.Collections.sort;
 
 public class Gambling {
     private int population;
+    private static Random r = new Random();
     private static Random random = new Random();
     private ArrayList<Double> GStorage = new ArrayList<Double>();
 
@@ -22,69 +23,25 @@ public class Gambling {
 
     
 
-    public static void main(String[] args) {
-        Gambling g = new Gambling();
-        System.out.println("help me please: " + g.random.nextInt());
+    public static void main(String [] args){
+        
+        int population = 1000000;
+        
+        ArrayList<Double> rolls = normalValues(population);
+        Interval intervalles = new Interval();
+        double[] predictionInterval = intervalles.intervalReducer(rolls);
+        double predictedMean = Mean.mean(predictionInterval);
+        double predictedVariance = StandardDev.estimatedVarience(predictionInterval);
+        double predictedStandD = Math.sqrt(predictedVariance);
+        double[] predictedNormalVals = NormalDistribution.normalValues(predictedMean, predictedStandD);
+        double[] step2Norm = step2NormalDistribution.step2Normal(predictedMean, predictedStandD);
+        double[] predictedLog = Log.calculateLog(predictedNormalVals);
+        System.out.println("Mean: " + predictedMean);
+        System.out.println("Low: " + predictedNormalVals[0]);
+        System.out.println("High: " + predictedNormalVals[1]);
+        System.out.println("STEP2: Low " + predictedNormalVals[1]);
+        System.out.println("STEP2: High " + predictedNormalVals[1]);
     }
-
-class Interval{
-
-    public double[] intervalReducer(ArrayList<Double> rolls){
-        double startInterval = rolls.get((int) (0.05 * rolls.size()));
-        double endInterval = rolls.get((int)(0.95 * rolls.size()));
-        double[] result = {startInterval, endInterval};
-
-        return result;
-    }
-
-}
-class Mean{
-    public double mean(double[] interval) {
-        double highest = interval[1];
-        double lowest = interval[0];
-        return (highest + lowest) / 2.0;
-    }
-}
-
-class StandardDev{
-    public double estimatedVarience(double[] interval){
-        // low = mean - stddev * 1.645
-        double low = interval[0];
-        double high = interval[1];
-        double mean = (high + low) / 2.0;
-        // stddev * 1.645 = mean - low
-        // stddev = (mean - low) / 1.645
-        return (mean - low) / 1.645;
-    }
-}
-
-class NormalDistribution{
-    public double[] normalValues( double mean, double predictedStandD){
-        double low = mean - predictedStandD * 1.645;
-        double high = mean + predictedStandD * 1.645;
-        double[] normalVals = {low, high};
-        return normalVals;
-    }
-}
-
-class Log {
-    public double[] calculateLog(double[] normalValues) {
-        double logOfMin = Math.log(normalValues[0]);
-        double logOfMax = Math.log(normalValues[1]);
-        double[] logValues = {logOfMin, logOfMax};
-        return logValues;
-    }
-    }  
-
-
-    class NormalRandomVariable implements RandomVariable{
-        private Random r = new Random();
-        ArrayList<Double> normalValues(int population){
     
-        }
-        public RandomVariable(){
-            this.random = random;
-        }
-    }
-
 }
+    
