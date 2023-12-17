@@ -30,5 +30,6 @@ class NormalRandomVariable implements RandomVariable {
         // Provide a meaningful implementation for the next() method
         return mean + stdDev * r.nextGaussian();
     }
+    
 
 }
