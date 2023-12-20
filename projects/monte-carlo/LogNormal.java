@@ -1,3 +1,4 @@
+import java.util.*;
 public class LogNormal implements RandomVariable {
 
     private RandomVariable normalRV;
@@ -6,12 +7,16 @@ public class LogNormal implements RandomVariable {
     private double logLow;
     private double mean;
     private double standardDev;
+    private double low;
+    private double high;
 
-    LogNormal(double low, double high){
-        logLow = Math.log(low);
-        logHigh = Math.log(high);
-        mean = (low + high) / 2;
-        standardDev = (mean - low) / 1.645;
+    void LogNormal(double initLow, double initHigh){
+        high = initHigh;
+        low = initLow;
+        logLow = Math.log(initLow);
+        logHigh = Math.log(initHigh);
+        mean = (logLow + logHigh) / 2;
+        standardDev = (mean - logLow) / 1.645;
         // initialize normalRV
     }
 
