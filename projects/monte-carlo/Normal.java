@@ -19,7 +19,7 @@ public class Normal implements RandomVariable {
   }
 
   public double next() {
-    return mean + standardDev;
-    //return r.nextGaussian(mean, standardDev);
+   // return mean + standardDev;
+    return r.nextGaussian(mean, standardDev);
   }
 }

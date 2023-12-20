@@ -17,11 +17,15 @@ public class LogNormal implements RandomVariable {
         logHigh = Math.log(initHigh);
         mean = (logLow + logHigh) / 2;
         standardDev = (mean - logLow) / 1.645;
+        normalRV = new RandomVariable();
         // initialize normalRV
     }
 
     public double next(){
-    return r.nextGaussian(mean, standardDev);
+    //return low + high;
+     // return r.nextGaussian(mean, standardDev);
+        return Math.exp(r.nextGaussian(mean, standardDev));
+       //return Math.exp();
     }
 
         
