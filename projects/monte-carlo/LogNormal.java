@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class LogNormal implements RandomVariable {
 
     private RandomVariable normalRV;

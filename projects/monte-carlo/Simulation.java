@@ -16,17 +16,18 @@ public class Simulation {
     
 
     public static void main(String[] args) {
-       RandomVariable testeR;
+       //RandomVariable testeR;
        Normal norm = new Normal(-1.645, 1.645);
        Normal norm2 = new Normal(10, 20);
        Simulation sim = new Simulation();
        LogNormal logNorm = new LogNormal(10, 20);
-      
+       Sum s1 = new Sum(norm,logNorm);
      
      // testeR.NormalSDM();
       System.out.println("norm: " + sim.measure(norm, 10000));
       System.out.println("norm: " + sim.measure(norm2, 10000));
-      System.out.println("norm: " + sim.measure(logNorm, 10000));
+      System.out.println("logNorm: " + sim.measure(logNorm, 10000));
+      System.out.println("Addative: " + sim.measure(s1, 10000));
 
 
     }
