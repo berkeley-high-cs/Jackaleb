@@ -37,4 +37,13 @@ public int countPrimes(int [] array){
     return count;
   }
 
+  public int indexOfVowel(String r2){
+    for(int i = 0; i < r2.length; i++){
+      if(isVowel(r2.substring(i, i + 1))){
+        return i;
+      }
+    }
+    return 404;
+  }
+
 }
