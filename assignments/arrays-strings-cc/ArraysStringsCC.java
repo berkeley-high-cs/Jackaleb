@@ -27,4 +27,14 @@ public int countPrimes(int [] array){
     return count++;
   }
 
+  public int countVowels(String r){
+    int count = 0;
+    for(int i = 0; i< r.length - 1; i++){
+      if(isVowel(r.substring(i, i + 1))){
+        count++;
+      }
+    }
+    return count;
+  }
+
 }
