@@ -43,7 +43,7 @@ public int countPrimes(int [] array){
         return i;
       }
     }
-    return 404;
+    return -1;
   }
 
 }
