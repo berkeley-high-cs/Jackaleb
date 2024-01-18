@@ -46,4 +46,16 @@ public int countPrimes(int [] array){
     return -1;
   }
 
+
+  public String disemvowel(String r3){
+    StringBuilder r3taker = new StringBuilder(r3);
+  for(int i = 0; i< r3taker.length(); i++){
+      if(isVowel(r3taker.substring(i, i + 1))){
+          r3taker = r3taker.deleteCharAt(i);
+        } else{i++;}
+
+    }
+    r3takerFinal = r3taker.toString();
+  return r3takerFinal;
+  }
 }
