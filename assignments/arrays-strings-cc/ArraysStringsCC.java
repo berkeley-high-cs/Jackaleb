@@ -1,3 +1,4 @@
+import java.util.*;
 public class ArraysStringsCC {
 
   /*
@@ -16,7 +17,7 @@ public class ArraysStringsCC {
     }
     return n > 1;
   }
-
+/*
 public int countPrimes(int [] array){
  int count = 0;
  for(int i = 0; i < array.length; i++){
@@ -25,6 +26,12 @@ public int countPrimes(int [] array){
       }
     }
     return count++;
+  }
+*/
+  public int countPrimes(int [] array){
+    return Arrays.stream(array)
+    .filter(s -> isPrime(s))
+    .count();
   }
 
   public int countVowels(String r){
