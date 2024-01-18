@@ -29,7 +29,7 @@ public int countPrimes(int [] array){
   }
 */
   public int countPrimes(int [] array){
-    return Arrays.stream(array)
+    return (int)Arrays.stream(array)
     .filter(s -> isPrime(s))
     .count();
   }
