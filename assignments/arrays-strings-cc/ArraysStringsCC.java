@@ -45,7 +45,7 @@ public int countPrimes(int [] array){
   }
 */
   public int countVowels(String r){
-    return (int)Arrays.stream(r).filter(r -> isVowel(r)).count();
+    return (int)String.stream(r).filter(r -> isVowel(r)).count();
   }
   public int indexOfVowel(String r2){
     for(int i = 0; i < r2.length(); i++){
