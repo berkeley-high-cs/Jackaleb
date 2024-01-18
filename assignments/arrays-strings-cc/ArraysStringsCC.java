@@ -72,7 +72,7 @@ public int countPrimes(int [] array){
   public int countStartsWithVowel(String [] array){
     int count = 0; 
    for(int i = 0; i < array.length; i++ ){
-    if (array[i].substring(0, 1).isVowel()){
+    if (isVowel(array[i].substring(0, 1))){
       count++;
     }
     }
