@@ -55,7 +55,7 @@ public int countPrimes(int [] array){
         } else{i++;}
 
     }
-    r3takerFinal = r3taker.toString();
+   String r3takerFinal = r3taker.toString();
   return r3takerFinal;
   }
 }
