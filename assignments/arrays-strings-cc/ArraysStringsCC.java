@@ -49,7 +49,7 @@ public int countPrimes(int [] array){
 
   public String disemvowel(String r3){
     StringBuilder r3taker = new StringBuilder(r3);
-  for(int i = 0; i< r3taker.length(); i++){
+  for(int i = 0; i< r3taker.length();){
       if(isVowel(r3taker.substring(i, i + 1))){
           r3taker = r3taker.deleteCharAt(i);
         } else{i++;}
